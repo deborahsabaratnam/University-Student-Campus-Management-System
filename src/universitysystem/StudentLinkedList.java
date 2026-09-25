@@ -1,4 +1,4 @@
-package src.universitysystem;
+package universitysystem;
 
 public class StudentLinkedList {
     
