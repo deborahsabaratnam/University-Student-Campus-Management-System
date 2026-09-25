@@ -2,6 +2,12 @@ package universitysystem;
 
 public class Student {
 
+<<<<<<< HEAD
+    Object getStudentId() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+=======
     private String studentId;
     private String name;
     private String programme;
@@ -50,4 +56,5 @@ public class Student {
             " | Marks: " + marks
         );
     }
+>>>>>>> 01790ad299837c3751973b027e1c838c90c2f843
 }
