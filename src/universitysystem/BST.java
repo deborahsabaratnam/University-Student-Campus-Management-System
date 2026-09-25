@@ -137,7 +137,7 @@ public class BST {
     private void inOrder(BSTNode node) {
         if (node != null) {
             inOrder(node.left);
-            node.student.displayStudent();
+            System.out.println(node.student);
             inOrder(node.right);
         }
     }
