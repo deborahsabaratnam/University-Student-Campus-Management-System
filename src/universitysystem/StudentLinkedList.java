@@ -1,4 +1,4 @@
-package studentmanagement;
+package universitysystem;
 
 public class StudentLinkedList {
 
@@ -19,8 +19,7 @@ public class StudentLinkedList {
 
         if (head == null) {
             head = newNode;
-        } 
-        else {
+        } else {
             StudentNode current = head;
 
             while (current.next != null) {
@@ -123,9 +122,8 @@ public class StudentLinkedList {
 
         System.out.println("Student updated successfully.");
     }
-    
-    public boolean isEmpty() {
 
+    public boolean isEmpty() {
         return head == null;
     }
 
@@ -136,9 +134,7 @@ public class StudentLinkedList {
         StudentNode current = head;
 
         while (current != null) {
-
             count++;
-
             current = current.next;
         }
 
