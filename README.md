@@ -2,9 +2,13 @@
 Java console application for managing university student records and campus routes using Linked List, Stack, Queue, BST, Hashing, and Graph data structures.
 
 Group Members
+
 Wathmi Sandeepa - 23DA2-0332 - Student Records - Linked List 
+
 Fatima Shifara - 23DA2-0328 - Stack and Queue 
+
 Siyumi Hansika - 23DA2-0286 - BST and Hash Table 
+
 Deborah Sabaratnam - 23DA2-0315 - Graph and GitHub Integration 
 
 Individual Contributions
