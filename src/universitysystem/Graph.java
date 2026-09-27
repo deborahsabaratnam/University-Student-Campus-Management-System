@@ -175,7 +175,7 @@ public class Graph {
         }
 
         Set<String> visited = new LinkedHashSet<>();
-        Queue<String> queue = new LinkedList<>();
+        java.util.Queue<String> queue = new LinkedList<>();
 
         // Start BFS
         visited.add(startLocation);
