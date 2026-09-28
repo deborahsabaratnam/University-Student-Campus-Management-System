@@ -147,7 +147,7 @@ public class BST {
     }
 
     private String getStudentId(Student student) {
-        if (student == null || student.getStudentId() == null) {
+        if (student == null) {
             return null;
         }
 

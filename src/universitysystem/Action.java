@@ -1,8 +1,8 @@
 package universitysystem;
 
 public class Action {
-     private String actionType;
-    private String description;
+    private final String actionType;
+    private final String description;
 
     public Action(String actionType, String description) {
         this.actionType = actionType;

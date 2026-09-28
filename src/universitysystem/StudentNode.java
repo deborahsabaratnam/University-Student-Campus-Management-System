@@ -1,12 +1,14 @@
 package universitysystem;
+
 public class StudentNode {
 
     Student data;
-    StudentNode next;
+    StudentNode left;
+    StudentNode right;
 
     public StudentNode(Student data) {
         this.data = data;
-        this.next = null;
+        this.left = null;
+        this.right = null;
     }
 }
-

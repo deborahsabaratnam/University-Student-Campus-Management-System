@@ -29,7 +29,7 @@ public class HashTable {
     }
 
     private String getStudentId(Student student) {
-        if (student == null || student.getStudentId() == null) {
+        if (student == null) {
             return null;
         }
 
@@ -39,7 +39,7 @@ public class HashTable {
     public void insert(Student student) {
         String studentId = getStudentId(student);
 
-        if (studentId == null || studentId.isEmpty()) {
+        if (studentId.isEmpty()) {
             System.out.println("Invalid Student ID.");
             return;
         }
