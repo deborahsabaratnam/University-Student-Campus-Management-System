@@ -58,6 +58,28 @@ public class StudentLinkedList {
         return null;
     }
 
+        // Update a student's details by ID
+    public boolean updateStudent(String studentId, String name, String course, double marks) {
+
+        StudentNode current = head;
+
+        while (current != null) {
+
+            if (current.getStudent().getStudentId().equals(studentId)) {
+
+                Student updatedStudent =
+                        new Student(studentId, name, course, marks);
+
+                current.setStudent(updatedStudent);
+
+                return true;
+            }
+
+            current = current.getNext();
+        }
+
+        return false;
+    }
     // Delete a student by ID
     public boolean deleteStudent(String studentId) {
 

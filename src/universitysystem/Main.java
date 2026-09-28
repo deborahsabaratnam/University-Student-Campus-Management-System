@@ -289,7 +289,7 @@ public class Main {
 
                     if (foundStudent != null) {
                         System.out.println("\nStudent found:");
-                        foundStudent.displayStudent();
+                        System.out.println(foundStudent);
                     } else {
                         System.out.println("Student not found.");
                     }

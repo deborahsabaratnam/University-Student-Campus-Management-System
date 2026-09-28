@@ -14,6 +14,10 @@ public class StudentNode {
         return student;
     }
 
+     public void setStudent(Student student) {
+        this.student = student;
+    }
+
     public StudentNode getNext() {
         return next;
     }
