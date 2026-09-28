@@ -4,138 +4,96 @@ public class StudentLinkedList {
 
     private StudentNode head;
 
+    // Constructor
     public StudentLinkedList() {
         head = null;
     }
 
+    // Add a student to the end of the linked list
     public void addStudent(Student student) {
-
-        if (searchStudent(student.getStudentId()) != null) {
-            System.out.println("Error: Student ID already exists.");
-            return;
-        }
-
         StudentNode newNode = new StudentNode(student);
 
         if (head == null) {
             head = newNode;
-        } else {
-            StudentNode current = head;
-
-            while (current.next != null) {
-                current = current.next;
-            }
-
-            current.next = newNode;
+            return;
         }
 
-        System.out.println("Student added successfully.");
+        StudentNode current = head;
+
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+
+        current.setNext(newNode);
     }
 
-    public Student searchStudent(String studentId) {
+    // Display all students
+    public void displayStudents() {
+        if (head == null) {
+            System.out.println("No students found.");
+            return;
+        }
 
         StudentNode current = head;
 
         while (current != null) {
+            System.out.println(current.getStudent());
+            current = current.getNext();
+        }
+    }
 
-            if (current.data.getStudentId().equals(studentId)) {
-                return current.data;
+    // Search for a student by ID
+    public Student searchStudent(String studentId) {
+        StudentNode current = head;
+
+        while (current != null) {
+
+            if (current.getStudent().getStudentId().equals(studentId)) {
+                return current.getStudent();
             }
 
-            current = current.next;
+            current = current.getNext();
         }
 
         return null;
     }
 
-    public void displayStudents() {
+    // Delete a student by ID
+    public boolean deleteStudent(String studentId) {
 
         if (head == null) {
-            System.out.println("No student records found.");
-            return;
+            return false;
+        }
+
+        // If the student is the first node
+        if (head.getStudent().getStudentId().equals(studentId)) {
+            head = head.getNext();
+            return true;
         }
 
         StudentNode current = head;
 
-        System.out.println();
-        System.out.println("========== STUDENT RECORDS ==========");
+        while (current.getNext() != null) {
 
-        while (current != null) {
-
-            current.data.displayStudent();
-
-            current = current.next;
-        }
-
-        System.out.println("=====================================");
-    }
-
-    public void deleteStudent(String studentId) {
-
-        if (head == null) {
-            System.out.println("No student records found.");
-            return;
-        }
-
-        if (head.data.getStudentId().equals(studentId)) {
-
-            head = head.next;
-
-            System.out.println("Student deleted successfully.");
-            return;
-        }
-
-        StudentNode current = head;
-
-        while (current.next != null) {
-
-            if (current.next.data.getStudentId().equals(studentId)) {
-
-                current.next = current.next.next;
-
-                System.out.println("Student deleted successfully.");
-                return;
+            if (current.getNext().getStudent().getStudentId().equals(studentId)) {
+                current.setNext(current.getNext().getNext());
+                return true;
             }
 
-            current = current.next;
+            current = current.getNext();
         }
 
-        System.out.println("Student not found.");
+        return false;
     }
 
-    public void updateStudent(
-            String studentId,
-            String name,
-            String programme,
-            double marks) {
-
-        Student student = searchStudent(studentId);
-
-        if (student == null) {
-            System.out.println("Student not found.");
-            return;
-        }
-
-        student.setName(name);
-        student.setProgramme(programme);
-        student.setMarks(marks);
-
-        System.out.println("Student updated successfully.");
-    }
-
-    public boolean isEmpty() {
-        return head == null;
-    }
-
-    public int countStudents() {
-
+    // Count the number of students
+    public int size() {
         int count = 0;
-
         StudentNode current = head;
 
         while (current != null) {
             count++;
-            current = current.next;
+            current = current.getNext();
         }
 
         return count;
